@@ -217,3 +217,4 @@ resource "aws_route_table_association" "private_subnet_1c_association" {
     route_table_id = aws_route_table.private_rt_az1c.id  
     subnet_id = aws_subnet.private_subnet_1c.id 
 }
+

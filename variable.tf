@@ -52,3 +52,10 @@ variable "private_subnet_1c_cidr" {
     type = string
     default = "10.0.160.0/20"
 }
+
+# image ami
+variable "ami" {
+    type = string
+    default = "ami-0de716d6197524dd9"
+  
+}
