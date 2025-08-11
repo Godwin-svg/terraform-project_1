@@ -1,4 +1,4 @@
-
+![Reference an architecture diagrame](teraform_project_1.drawio.png)
 ---
 
 # Terraform Web Application Infrastructure 
