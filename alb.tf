@@ -1,36 +1,3 @@
-# create security group for alb
-resource "aws_security_group" "alb_sg" {
-    vpc_id = aws_vpc.vpc.id 
-    name = "alb_security_group"
-    description = "allows http and https traffic from the internet"
-
-    tags = {
-    Name = "${var.project-name}-alb_security_group"
-  }
-}
-
-resource "aws_vpc_security_group_ingress_rule" "alb_ingress_http" {
-    security_group_id = aws_security_group.alb_sg.id 
-    cidr_ipv4 = var.default_cidr
-    from_port = 80
-    to_port = 80
-    ip_protocol = "tcp" 
-}
-
-
-resource "aws_vpc_security_group_ingress_rule" "alb_ingress_https" {
-    security_group_id = aws_security_group.alb_sg.id 
-    cidr_ipv4 = var.default_cidr
-    from_port = 443
-    to_port = 443
-    ip_protocol = "tcp" 
-}
-
-resource "aws_vpc_security_group_egress_rule" "alb_egress" {
-    security_group_id = aws_security_group.alb_sg.id 
-    cidr_ipv4 = var.default_cidr
-    ip_protocol = "-1" 
-}
 
 # create alb
 resource "aws_lb" "alb" {

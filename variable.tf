@@ -1,7 +1,7 @@
 # project name
 variable "project-name" {
     type = string
-  default = "Terraform-project"
+  default = "apache"
 }
 
 # vpc cdir block
